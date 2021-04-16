@@ -38,7 +38,7 @@ const Header=({history})=>{
              <li className="animfadeInRight" data-time="900">
 
              {
-                      username? (<button style={{textDecoration:"none"}} onClick={deplace1}>{username}</button>): (<button style={{textDecoration:"none"}} onClick={deplace}>Login</button>)
+                      username? (<a style={{textDecoration:"none"}} onClick={deplace1}>{username}</a>): (<a style={{textDecoration:"none"}} onClick={deplace}>Login</a>)
                     }
              </li>
            

@@ -95,14 +95,14 @@ const Landing=({history})=> {
               </div>
 
               <div className="btn-home animfadeInLeft" data-time="400">
-                <button className="link-className" onClick={handleMap}>
+                <a className="link-className" onClick={handleMap}>
                   Take tour
-                </button>
+                </a>
               </div>
               <div className="btn-home animfadeInRight" data-time="400">
-                <button className="link-className" onClick={handleIntro}>
+                <a className="link-className" onClick={handleIntro}>
                   Discover
-                </button>
+                </a>
               </div>
             </div>
 
