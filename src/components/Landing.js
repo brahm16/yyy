@@ -74,7 +74,7 @@ const Landing=({history})=> {
               </h1>
               <div
                 className="devider-center animfadeInUpBig"
-                data-time="1700"
+                data-time="100"
               ></div>
               <div id="slidertext" className="animfadeInUpBig" data-time="400">
                 <div className="main-text">wild experience</div>
@@ -95,12 +95,12 @@ const Landing=({history})=> {
               </div>
 
               <div className="btn-home animfadeInLeft" data-time="400">
-                <a className="link-className" onClick={handleMap}>
+                <a className="link-className" href="https://serverhawas.herokuapp.com/map">
                   Take tour
                 </a>
               </div>
               <div className="btn-home animfadeInRight" data-time="400">
-                <a className="link-className" onClick={handleIntro}>
+                <a className="link-className" href="https://serverhawas.herokuapp.com/intro">
                   Discover
                 </a>
               </div>
