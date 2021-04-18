@@ -3,12 +3,11 @@ import React from 'react';
 import LanguageSelect from './LanguageSelect';
 import { getCookie } from '../helpers/auth';
 import {  REACT_APP_Client_URL } from '../constants';
+import { Link } from 'react-router-dom';
 
 
 
-const deplace=()=>{
-  window.location.replace(REACT_APP_Client_URL);
-}
+
 const deplace1=()=>{
 window.location.replace(REACT_APP_Client_URL)
 }
@@ -38,7 +37,7 @@ const Header=({history})=>{
              <li className="animfadeInRight" data-time="900">
 
              {
-                      username? (<a style={{textDecoration:"none"}} onClick={deplace1}>{username}</a>): (<a style={{textDecoration:"none"}} onClick={deplace}>Login</a>)
+                      username? (<a style={{textDecoration:"none"}} onClick={deplace1}>{username}</a>): (<Link style={{textDecoration:"none"}} to="/r/login" >Login</Link>)
                     }
              </li>
            

@@ -15,16 +15,16 @@ export default class Services extends Component {
         <div className="row">
 
           <div className="col-md-12 spacedown">
-            <h1 className="animbounceInLeft" data-time="600">
+            <h1 >
               All services
             </h1>
             
-            <div className="devider-page animfadeInLeft" data-time="1100"></div>
+            <div ></div>
           </div>
 
           <div
-            className="col-md-12 color-gray spacedown animfadeInUp"
-            data-time="1300"
+            className="col-md-12 color-gray spacedown "
+            
           >
             <h3>Games</h3>
             <div className="devider-page-content"></div>
@@ -41,8 +41,8 @@ export default class Services extends Component {
             </div>
           </div>
           <div
-            className="col-md-12 color-gray spacedown animfadeInUp"
-            data-time="1300"
+            className="col-md-12 color-gray spacedown "
+            
           >
             <h3>Events</h3>
             <div className="devider-page-content"></div>
@@ -59,8 +59,8 @@ export default class Services extends Component {
             </div>
           </div>
           <div
-            className="col-md-12 color-gray spacedown animfadeInUp"
-            data-time="1300"
+            className="col-md-12 color-gray spacedown "
+            
           >
             <h3>Maison d'hotes</h3>
             <div className="devider-page-content"></div>
@@ -77,8 +77,8 @@ export default class Services extends Component {
             </div>
           </div>
           <div
-            className="col-md-12 color-gray spacedown animfadeInUp"
-            data-time="1300"
+            className="col-md-12 color-gray spacedown "
+          
           >
             <h3>Products</h3>
             <div className="devider-page-content"></div>

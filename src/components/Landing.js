@@ -1,6 +1,6 @@
 import React from "react";
 
-import { REACT_APP_CLIENT_INTRO, REACT_APP_CLIENT_MAP } from "../constants";
+import {  REACT_APP_CLIENT_INTRO_PROD,  REACT_APP_CLIENT_MAP_PROD } from "../constants";
 import Header from "./Header";
 
 
@@ -14,11 +14,11 @@ const [isToggled, setIsToggled] = React.useState(false);
 */
 const handleMap=() =>{
   console.log("aaaaaaaaaaaaa");
-  window.location.replace(REACT_APP_CLIENT_MAP);
+  window.location.replace(REACT_APP_CLIENT_MAP_PROD);
 }
 const handleIntro=()=> {
   console.log("aaaaaaaaaaaaa");
-  window.location.replace(REACT_APP_CLIENT_INTRO);
+  window.location.replace(REACT_APP_CLIENT_INTRO_PROD);
 }
 
 const Landing=({history})=> {
@@ -30,10 +30,10 @@ const Landing=({history})=> {
       backgroundImage: "url('img/zagh/0.jpg')",
     };
     const style2 = {
-      backgroundImage: "url('img/zagh/1.jpg')",
+      backgroundImage: "url('img/zagh/10.jpg')",
     };
     const style3 = {
-      backgroundImage: "url('img/zagh/5.jpg')",
+      backgroundImage: "url('img/zagh/festival.jpg')",
     };
     return (
       <>
