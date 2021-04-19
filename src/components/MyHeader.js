@@ -7,11 +7,12 @@ import { Link } from 'react-router-dom';
 const MyHeader=({history}) => {
     
     const username=getCookie("username");
+	const token =getCookie("token");
 
         return (
     <nav className="navbar navbar-expand-md navbar-dark">
 		<div className="container">
-			<a href="#" className="navbar-brand">Zaghouane</a>
+			<a href="/" className="navbar-brand">Zaghouane</a>
 			
 			<button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
 				<span className="menu-icon-bar"></span>
@@ -21,10 +22,10 @@ const MyHeader=({history}) => {
 			
 			<div id="main-nav" className="collapse navbar-collapse">
 				<ul className="navbar-nav ml-auto">
-					<li><a href="#" className="nav-item nav-link active">Home</a></li>
-					<li><a href="#" className="nav-item nav-link">About Us</a></li>
+					<li><a href="/" className="nav-item nav-link ">Home</a></li>
+					<li><Link to="/m/about" className="nav-item nav-link">About Us</Link></li>
 					<li className="dropdown">
-						<a href="#" className="nav-item nav-link" data-toggle="dropdown">Services</a>
+						<Link to="/m/services" className="nav-item nav-link" data-toggle="dropdown">Services</Link>
 						<div className="dropdown-menu">
 							<a href="#" className="dropdown-item">Games</a>
 							<a href="#" className="dropdown-item">Maison d'hotes</a>
@@ -33,11 +34,11 @@ const MyHeader=({history}) => {
 
 						</div>
 					</li>
-                    <li><a href="#" className="nav-item nav-link">Places</a></li>
-                    <li><a href="#" className="nav-item nav-link">Contact</a></li>
+                    <li><Link to="/m/places" className="nav-item nav-link">Places</Link></li>
+                    <li><Link to="/m/contact" className="nav-item nav-link">Contact</Link></li>
                     <li>
                     {
-                      username? (<Link className="nav-item nav-link" to="/s/profile" >Profile</Link>): (<Link style={{textDecoration:"none"}} to="/s/profile" >Login</Link>)
+                      token? (<Link className="nav-item nav-link" to="/s/profile" >Profile</Link>): (<Link style={{textDecoration:"none"}} to="/s/profile" >Login</Link>)
                     }
                     </li>
 

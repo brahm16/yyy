@@ -55,6 +55,8 @@ const Login = ({ history }) => {
       })
       .then((res) => {
         console.log(res.data);
+        setCookie("user",res.data.user);
+        setCookie("username",res.data.user.name);
         informParent(res);
       })
       .catch((error) => {
@@ -71,7 +73,7 @@ const Login = ({ history }) => {
     sendFacebookToken(response.userID, response.accessToken);
   };
 
-  const handleSubmit = (e) => {
+  const handleY = (e) => {
     console.log(process.env.REACT_APP_API_URL);
     e.preventDefault();
     if (email && password1) {
@@ -83,6 +85,8 @@ const Login = ({ history }) => {
         })
         .then((res) => {
           authenticate(res, () => {
+            setCookie("user",res.data.user);
+            setCookie("username",res.data.user.name);
             setFormData({
               ...formData,
               email: "",
@@ -113,18 +117,16 @@ const Login = ({ history }) => {
       toast.error("Please fill all fields");
     }
   };
-  const handleClick= (e)=>{
-    history.push("/")
-  }
+//window.location.replace("https://hawasss.herokuapp.com")
+
   return (
     <>
-        <ToastContainer />
 
-
-    {isAuth() && isAuth().role==="admin" ? <Redirect to="/admin" /> : null}
-      {isAuth() && isAuth().role==="subscriber" ? <Redirect to="/subscriber" /> : null}
-      {isAuth() && isAuth().role==="owner" ? <Redirect to="/owner" /> : null}
+    {isAuth()  ? window.location.replace("http://localhost:3000")  : null}
+     
       <div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+      <ToastContainer />
+
 
         <div class="loginbox bg-white">
 
@@ -174,7 +176,7 @@ const Login = ({ history }) => {
             </div>
             <form
                
-                onSubmit={handleSubmit}
+                onClick={handleY}
               >
             <div class="loginbox-textbox">
                 <input type="text"
@@ -191,14 +193,14 @@ const Login = ({ history }) => {
                   value={password1} />
             </div>
             <div class="loginbox-forgot">
-                <a href="">Forgot Password?</a>
+                <Link to="/r/users/password/forget">Forgot Password?</Link>
             </div>
             <div class="loginbox-submit">
-                <button type="button" class="btn btn-primary btn-block">Login</button> 
+                <button type="submit" class="btn btn-primary btn-block">Login</button> 
             </div>
             <div class="loginbox-signup">
             <Link
-                    to="/r/login">Login</Link>
+                    to="/r/register">Register</Link>
             </div>
             </form>
         </div>

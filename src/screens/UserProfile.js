@@ -2,6 +2,8 @@ import React, { Component,useState,useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { updateUser, isAuth, getCookie, signout, setCookie } from '../helpers/auth';
+import "./sidebar.css"
+import { useHistory } from 'react-router';
 function UserProfile({history}) {
     const [formData, setFormData] = useState({
         name: '',
@@ -88,19 +90,48 @@ function UserProfile({history}) {
             console.log(err.response);
           });
       };
-
+const his=useHistory();
         return (
             <>
             <div style={{paddingTop:"5rem;"}}>
+              <ToastContainer />
             <div class="container" >
             <div class="row flex-lg-nowrap">
+            <div class="col-12 col-md-3 mb-3">
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <div class="px-xl-3">
+                        <ul class="sidebar-nav">
+            <li  class="sidebar-brand">
+                <a style={{color:"black"}} href="#">
+                    HawasBia
+                </a>
+            </li>
+            <li>
+                <a  href="#">Profile</a>
+            </li>
+            <li>
+                <a  href="#">Orders</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">Avis</a>
+            </li>
+        </ul>
+                        </div>
+                      </div>
+                    </div>
+                
+                  </div>
               
             
               <div class="col">
                 <div class="row">
                   <div class="col mb-3">
-                    <div class="card " >
-                      <div class="card-body">
+                    <div class="card bg-transparent"  >
+                      <div class="card-body" >
                         <div class="e-profile">
                           <div class="row">
                             <div class="col-12 col-sm-auto mb-3">
@@ -111,27 +142,29 @@ function UserProfile({history}) {
                             
                               </div>
                             </div>
-                            <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                              <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                                <p class="mb-0">@johnny.s</p>
-                                <div class="text-muted"><small>Last seen 2 hours ago</small></div>
-                                <div class="mt-2">
-                                  <button class="btn btn-primary" type="button">
-                                    <i class="fa fa-fw fa-camera"></i>
-                                    <span>Change Photo</span>
-                                  </button>
-                                </div>
-                              </div>
-                           
-                            </div>
+                         
                           </div>
                         
                           <div class="tab-content pt-3">
                             <div class="tab-pane active">
+                            <div className="row">
+                                      <div className="col">
+                                      <button onClick={() => {
+                    signout(() => {
+                      toast.error('Signout Successfully');
+                      his.push("/login")
+                    });
+                  }}  class="btn btn-block btn-secondary">
+                            <i class="fa fa-sign-out"></i>
+                            <span>Logout</span>
+                          </button>
+
+                                      </div>
+                                      </div>
                               <form class="form" onSubmit={handleSubmit}>
                                 <div class="row">
                                   <div class="col">
+                                
                                     <div class="row">
                                       <div class="col">
                                         <div class="form-group">
@@ -221,7 +254,7 @@ function UserProfile({history}) {
                                
                                 <div class="row">
                                   <div class="col d-flex justify-content-end">
-                                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                                    <button class="btn btn-rounded btn-primary" type="submit">Save Changes</button>
                                   </div>
                                 </div>
                               </form>
@@ -233,19 +266,7 @@ function UserProfile({history}) {
                     </div>
                   </div>
             
-                  <div class="col-12 col-md-3 mb-3">
-                    <div class="card mb-3">
-                      <div class="card-body">
-                        <div class="px-xl-3">
-                          <button class="btn btn-block btn-secondary">
-                            <i class="fa fa-sign-out"></i>
-                            <span>Logout</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                
-                  </div>
+               
                 </div>
             
               </div>

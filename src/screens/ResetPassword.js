@@ -3,7 +3,7 @@ import authSvg from "../assets/auth.svg";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-const ResetPassword = ({match}) => {
+function ResetPassword({match}){
   const [formData, setFormData] = useState({
       password1: '',
       password2: '',

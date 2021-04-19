@@ -18,6 +18,7 @@ import Events from './components/Events';
 import Register from './screens/Register';
 import Login from './screens/Login';
 import ForgetPassword from './screens/ForgetPassword';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

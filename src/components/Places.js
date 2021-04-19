@@ -14,7 +14,7 @@ export default class Places extends Component {
         const all = this.state.places.map((place) => {
             return(
                 <div
-                className="col-md-12 color-gray spacedown animfadeInUp"
+                className="col-md-12 color-gray spacedown "
                 data-time="1300"
               >
                 <h3>{place.name}</h3>

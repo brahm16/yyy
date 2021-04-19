@@ -2,19 +2,21 @@ import React, { useState } from 'react';
 import authSvg from '../assets/forget.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 
-const ForgetPassword = ({history}) => {
+function ForgetPassword ({history}) {
   const [formData, setFormData] = useState({
     email: '',
     textChange: 'Submit'
   });
-  const { email } = formData;
+  const { email, textChange } = formData;
   const handleChange = text => e => {
     setFormData({ ...formData, [text]: e.target.value });
   };
-  const handleSubmit = e => {
-    e.preventDefault();
+
+  const handleY= ()=>{
+   // console.log("aaaaaa")
+    toast.success("t3adaa");
     if (email) {
       setFormData({ ...formData, textChange: 'Submitting' });
       axios
@@ -37,21 +39,23 @@ const ForgetPassword = ({history}) => {
     } else {
       toast.error('Please fill all fields');
     }
-  };
+  }
   return (
     <>
     <div className="login-container animated fadeInDown bootstrap snippets bootdeys">
             <div className="loginbox bg-white">
                 <div className="loginbox-title">Reset password</div>
+                <ToastContainer />
+
               
                 
                 <form
-                onSubmit={handleSubmit}
+                onClick={handleY}
               >
                                 <div className="loginbox-textbox">
                                 <input
                   className='form-control'
-                  type='email'
+                  type='text'
                   placeholder='Email'
                   onChange={handleChange('email')}
                   value={email}
@@ -63,10 +67,21 @@ const ForgetPassword = ({history}) => {
 
 
                                 </div>
+                                <div class="loginbox-signup">
+            <Link
+                    to="/r/login">login</Link>
+            </div>
+            <div class="loginbox-signup">
+            
+            <a href="/">home</a>
+            </div>
 
 
             
               </form>
+              <div className="loginbox-title">
+
+              </div>
                 
             </div>
            

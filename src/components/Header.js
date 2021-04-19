@@ -12,6 +12,7 @@ const deplace1=()=>{
 window.location.replace(REACT_APP_Client_URL)
 }
 const username=getCookie("username");
+const token=getCookie("token");
 const Header=({history})=>{
     return(
         <header>
@@ -37,7 +38,7 @@ const Header=({history})=>{
              <li className="animfadeInRight" data-time="900">
 
              {
-                      username? (<a style={{textDecoration:"none"}} onClick={deplace1}>Profile</a>): (<Link style={{textDecoration:"none"}} to="/r/login" >Login</Link>)
+                      token? (<Link style={{textDecoration:"none"}} to="/s/profile">Profile</Link>): (<Link style={{textDecoration:"none"}} to="/r/login" >Login</Link>)
                     }
              </li>
            
